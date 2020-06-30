@@ -1,25 +1,16 @@
-#include "AFacade.cpp"
-#include "../service/Service.cpp"
+#include "AService.cpp"
 
-class Facade:AFacade {
-    private:
-        static Service service;
+
+class Service:AService {
 
     public:
-
-    /**
-     * Builder Method.
-     **/
-    Facade() {
-        service = Service();
-    }
 
     /**
      * Generate Create SQL Command.
      * @param gen GenSQL Instance.
      **/
     std::string generateCreate(GenSQL gen) {
-        return getService().generateCreate(gen);
+        return "";
     }
 
     /**
@@ -27,7 +18,7 @@ class Facade:AFacade {
      * @param gen GenSQL Instance.
      **/
     std::string generateInsert(GenSQL gen) {
-        return getService().generateInsert(gen);
+        return "";
     }
 
     /**
@@ -35,7 +26,7 @@ class Facade:AFacade {
      * @param gen GenSQL Instance.
      **/
     std::string generateUpdate(GenSQL gen) {
-        return getService().generateUpdate(gen);
+        return "";
     }
 
     /**
@@ -43,7 +34,7 @@ class Facade:AFacade {
      * @param gen GenSQL Instance.
      **/
     std::string generateSelect(GenSQL gen) {
-        return getService().generateSelect(gen);
+        return "";
     }
 
     /**
@@ -51,20 +42,7 @@ class Facade:AFacade {
      * @param gen GenSQL Instance.
      **/
     std::string generateJoin(GenSQL gen) {
-        return getService().generateJoin(gen);
-    }
-
-    // getters and setters
-
-    private:
-
-    Service getService() {
-        return service;
+        return "";
     }
 
 };
-
-int main() {
-    Facade f = Facade();
-
-}
